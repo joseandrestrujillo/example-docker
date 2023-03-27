@@ -1,0 +1,2 @@
+docker run --name php-fpm -v ./src:/var/www/html -p :9000 php:8-fpm
+docker run -v ./src:/var/www/html -v ./default.conf:/etc/nginx/conf.d/default.conf --link php-fpm -p 8080:80 nginx:latest
